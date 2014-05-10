@@ -259,3 +259,26 @@ vendor
   External libraries that the application depends on. Also includes the plugins
   subdirectory. If the app has frozen rails, those gems also go here, under
   vendor/rails/. This directory is in the load path.
+
+
+
+heroku sharing:add pinox101@gmail.com
+heroku domains:add www.contentio.co
+
+
+git remote remove git@heroku.com:getcontentio.git
+
+
+rails g scaffold Articulo tipo:string funcion:string codigoSectorial:integer sectorial:string codigoGrupo:integer grupo:string valor:decimal
+
+
+
+
+
+rails g scaffold Articulo titulo:string descripcion:string categoria:string tweet:string user_id:integer
+
+
+
+
+
+

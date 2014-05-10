@@ -11,129 +11,35 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131221010155) do
+ActiveRecord::Schema.define(:version => 20140510092622) do
 
-  create_table "ecuador_agua_consumos", :force => true do |t|
-    t.float    "minimoConsumo"
-    t.float    "mediaConsumo"
-    t.float    "maximoConsumo"
-    t.float    "totalConsumo"
-    t.float    "valorMinimo"
-    t.float    "valorMedia"
-    t.float    "valorMaximo"
-    t.float    "minimoSierra"
-    t.float    "minimoCosta"
-    t.float    "minimoAmazonia"
-    t.float    "mediaSierra"
-    t.float    "mediaCosta"
-    t.float    "mediaAmazonia"
-    t.float    "maximoSierra"
-    t.float    "maximoCosta"
-    t.float    "maximoAmazonia"
-    t.float    "metrosCubicosTotalesSierra"
-    t.float    "metrosCubicosTotalesCosta"
-    t.float    "metrosCubicosTotalesAmazonia"
-    t.float    "valorMinimoSierra"
-    t.float    "valorMinimoCosta"
-    t.float    "valorMinimoAmazonia"
-    t.float    "valorMediaSierra"
-    t.float    "valorMediaCosta"
-    t.float    "valorMediaAmazonia"
-    t.float    "valorMaximoSierra"
-    t.float    "valorMaximoCosta"
-    t.float    "valorMaximoAmazonia"
-    t.float    "valorTotalSierra"
-    t.float    "valorTotalCosta"
-    t.float    "valorTotalAmazonia"
-    t.datetime "created_at",                   :null => false
-    t.datetime "updated_at",                   :null => false
-  end
-
-  create_table "gs", :force => true do |t|
-    t.string   "EcuadorConsumo"
-    t.float    "minimoConsumo"
-    t.float    "mediaConsumo"
-    t.float    "maximoConsumo"
-    t.float    "totalConsumo"
-    t.float    "valorMinimo"
-    t.float    "valorMedia"
-    t.float    "valorMaximo"
-    t.float    "minimoSierra"
-    t.float    "minimoCosta"
-    t.float    "minimoAmazonia"
-    t.float    "mediaSierra"
-    t.float    "mediaCosta"
-    t.float    "mediaAmazonia"
-    t.float    "maximoSierra"
-    t.float    "maximoCosta"
-    t.float    "maximoAmazonia"
-    t.float    "metrosCubicosTotalesSierra"
-    t.float    "metrosCubicosTotalesCosta"
-    t.float    "metrosCubicosTotalesAmazonia"
-    t.float    "valorMinimoSierra"
-    t.float    "valorMinimoCosta"
-    t.float    "valorMinimoAmazonia"
-    t.float    "valorMediaSierra"
-    t.float    "valorMediaCosta"
-    t.float    "valorMediaAmazonia"
-    t.float    "valorMaximoSierra"
-    t.float    "valorMaximoCosta"
-    t.float    "valorMaximoAmazonia"
-    t.float    "valorTotalSierra"
-    t.float    "valorTotalCosta"
-    t.float    "valorTotalAmazonia"
-    t.datetime "created_at",                   :null => false
-    t.datetime "updated_at",                   :null => false
-  end
-
-  create_table "locations", :force => true do |t|
-    t.string   "address"
-    t.float    "latitude"
-    t.float    "longitude"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "partes", :force => true do |t|
-    t.string   "tipo"
-    t.string   "estado"
-    t.string   "macpc"
-    t.float    "latitude"
-    t.float    "longitude"
-    t.string   "address"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
-    t.string   "photo_file_name"
-    t.string   "photo_content_type"
-    t.integer  "photo_file_size"
-    t.datetime "photo_updated_at"
-    t.boolean  "gmaps"
+  create_table "articulos", :force => true do |t|
+    t.string   "titulo"
+    t.string   "descripcion"
+    t.string   "categoria"
+    t.string   "tweet"
     t.integer  "user_id"
-    t.integer  "factor_contaminante"
-    t.float    "precio"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
-  create_table "presupuestos", :force => true do |t|
-    t.string   "tipo"
-    t.string   "funcion"
-    t.integer  "codigoSectorial"
-    t.string   "sectorial"
-    t.integer  "codigoGrupo"
-    t.string   "grupo"
-    t.decimal  "valor"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+  create_table "installs", :force => true do |t|
+    t.string   "email",                  :default => "", :null => false
+    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
   end
 
-  create_table "sustancia", :force => true do |t|
-    t.string   "nombre"
-    t.float    "contenidoporcentual"
-    t.float    "peso"
-    t.integer  "eficienciareciclaje"
-    t.text     "uso"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
-  end
+  add_index "installs", ["email"], :name => "index_installs_on_email", :unique => true
+  add_index "installs", ["reset_password_token"], :name => "index_installs_on_reset_password_token", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -148,8 +54,6 @@ ActiveRecord::Schema.define(:version => 20131221010155) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
-    t.string   "nombre"
-    t.string   "telefono"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
