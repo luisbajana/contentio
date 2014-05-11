@@ -45,14 +45,12 @@
 <hr/>
 
 <div class="container">
-  <div class="js-masonry" data-masonry-options='{ "itemSelector": ".item", "columnWidth": 200 }'>
+  <div id="articulos">
     <% articulos.each do |articulo| %>
-      <div class="item">
-        <div class="row text-center">
+      <div class="item text-center">
           <a href="<%= articulo_path(articulo) %>"><i class="fa fa-file-text-o" style="display:block;font-size: 200px;"></i></a>
           <br/>
           <a href="<%= articulo_path(articulo) %>"><h4><%= articulo.titulo %></h4></a>
-        </div>
       </div>
     <% end %>
   </div>
