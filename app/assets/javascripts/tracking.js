@@ -66,7 +66,4 @@ $(function(){
     revenue: 14.99
   });
 
-  StatsMix.init("da4cf518c5183e8b4f0f");
-  StatsMix.track("Sales by Category and Region", 1, {'option': 'buscar'});
-
 });
