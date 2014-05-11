@@ -66,18 +66,7 @@ $(function(){
     revenue: 14.99
   });
 
-
-  var trackPurchase = function () {
-    // create an event as a JS object
-      var purchase = {
-        item: "golden widget"
-      };
-
-      // add it to the "purchases" collection
-      Keen.addEvent("purchases", purchase);
-  };
-
-  // wherever the purchase happens call the function
-  trackPurchase();
+  StatsMix.init("da4cf518c5183e8b4f0f");
+  StatsMix.track("Sales by Category and Region", 1, {'option': 'buscar'});
 
 });
