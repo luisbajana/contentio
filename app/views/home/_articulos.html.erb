@@ -1,0 +1,59 @@
+<div class="row">
+  <div class="col-md-1 text-right"></div>
+
+  <div class="col-md-6 text-left">
+    <h3 style="display: inline;">Articulos</h3>
+    <select style="display: inline;" class="basic">
+      <option><i class="fa fa-rocket"></i> Trending</option>
+      <option><i class="fa fa-bolt"></i> Nuevos</option>
+      <option> </option>
+    </select>
+    <h3 style="display: inline;">de</h3>
+    <select style="display: inline;" class="basic">
+      <option>Todas las categorias</option>
+      <option>Tecnologia</option>
+      <option>Cocina</option>
+      <option>Turismo y aventuras</option>
+      <option>Ciencia</option>
+      <option>Religion</option>
+      <option>Salud</option>
+      <option>Fitness</option>
+      <option>Viajes</option>
+    </select>
+    <i class="fa fa-search" style="font-size: 35px;margin-left: 12px;"></i>
+
+    <p>
+      <h5 style="color:#ccc;">Encuentra el <b style="color:#6E6E6E;">contenido</b> que buscas o <a href="#">contrata a algunos de nuestros escritores</a></h5>
+    </p>
+  </div>
+
+  <div class="col-md-4 text-center">
+    <h3 style="display: inline;">¿Quieres escribir para nosotros?</h3>
+    <br/>
+    <br/>
+    <div class="row">
+      <div class="col-md-12">
+        <a type="button" class="btn btn-primary" href="/articulos/new"><h5 style="display: inline;">Presenta tu Articulo</h5> <i class="fa fa-pencil-square-o" style="font-size:30px;margin-left: 10px;"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-2 text-left"></div>
+</div>
+
+<br>
+<hr/>
+
+<div class="container">
+  <div class="js-masonry" data-masonry-options='{ "itemSelector": ".item", "columnWidth": 200 }'>
+    <% articulos.each do |articulo| %>
+      <div class="item">
+        <div class="row text-center">
+          <a href="<%= articulo_path(articulo) %>"><i class="fa fa-file-text-o" style="display:block;font-size: 200px;"></i></a>
+          <br/>
+          <a href="<%= articulo_path(articulo) %>"><h4><%= articulo.titulo %></h4></a>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
