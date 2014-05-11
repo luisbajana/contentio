@@ -66,4 +66,18 @@ $(function(){
     revenue: 14.99
   });
 
+
+  var trackPurchase = function () {
+    // create an event as a JS object
+      var purchase = {
+        item: "golden widget"
+      };
+
+      // add it to the "purchases" collection
+      Keen.addEvent("purchases", purchase);
+  };
+
+  // wherever the purchase happens call the function
+  trackPurchase();
+
 });
