@@ -1,3 +1,4 @@
+
 <%= form_for(@articulo) do |f| %>
   <% if @articulo.errors.any? %>
     <div id="error_explanation">
@@ -13,26 +14,27 @@
 
   <div class="field">
     <%= f.label :titulo %><br />
-    <%= f.text_field :titulo %>
+    <%= f.text_field :titulo, :style => 'width: 100%;' %>
   </div>
   <div class="field">
     <%= f.label :descripcion %><br />
-    <%= f.text_field :descripcion %>
+    <%= f.text_field :descripcion, :style => 'width: 100%;' %>
   </div>
   <div class="field">
     <%= f.label :contenido %><br />
-    <%= f.text_field :contenido %>
+    <%= f.cktext_area :contenido, :class => "ckeditor" %>
   </div>
   <div class="field">
     <%= f.label :categoria %><br />
-    <%= f.text_field :categoria %>
+    <%= f.text_field :categoria, :style => 'width: 100%;' %>
   </div>
   <div class="field">
     <%= f.label :tweet %><br />
-    <%= f.text_field :tweet %>
+    <%= f.text_field :tweet, :style => 'width: 100%;' %>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
+  <br>
+  <div class="actions text-right">
+    <%= link_to 'Back', articulos_path %> <button type="submit" class="btn btn-primary">Submit</button>
   </div>
 <% end %>

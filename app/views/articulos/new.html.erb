@@ -1,14 +1,28 @@
 
+<br>
+<br>
+<br>
+<br>
+
+<div class="container">
+
+  <div class="row">
+      <div class="col-md-2"></div>
+
+      <div class="col-md-8 new-articulo">
+        <h1>Nuevo articulo</h1>
+
+        <%= render 'form' %>
+
+        <br><br>
+      </div>
+
+      <div class="col-md-2"></div>
+  </div>
+
+</div>
+
+<br><br><br><br>
 <script>
   window._gaq.push(['_trackEvent', 'Articulos', 'Crear', 'Articulo'])
 </script>
-
-<br>
-<br>
-<br>
-<br>
-<h1>Nuevo articulo</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', articulos_path %>
