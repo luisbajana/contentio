@@ -4,9 +4,7 @@ $ ->
   $('#articulos').masonry({
     columnWidth: 100,
     itemSelector: '.item'
-  });
-
-  $('.ckeditor').ckeditor({})
+  })
 
   $('#mostrar_contenido').click ->
     $('#contenido-container').removeClass('hidden')
