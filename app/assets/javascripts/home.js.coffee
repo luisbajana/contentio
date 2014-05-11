@@ -6,6 +6,8 @@ $ ->
     itemSelector: '.item'
   });
 
+  $('.ckeditor').ckeditor({})
+
   $('#mostrar_contenido').click ->
     $('#contenido-container').removeClass('hidden')
     $('#comprar-btn').addClass('hidden')
