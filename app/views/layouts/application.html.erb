@@ -16,13 +16,13 @@
 
   ga('create', 'UA-50857364-1', 'getcontentio.com');
   ga('send', 'pageview');
-  console.log("GA Initialized!");
 </script>
 
 </head>
 <body>
 
-  <div class="navbar navbar-default">
+  <div class="container">
+  <div class="navbar navbar-default navbar-fixed-top">
 
     <div class="navbar-header">
       <a class="navbar-brand" href="/">
@@ -32,7 +32,11 @@
 
     <div class="navbar-collapse collapse navbar-responsive-collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Home</a></li>
+        <li>
+          <form class="navbar-form navbar-left">
+            <input type="text" class="form-control col-lg-8" placeholder="Busca...">
+          </form>
+        </li>
         <li><a href="#">Login</a></li>
         <li><a href="#">Sign up</a></li>
 
@@ -47,6 +51,7 @@
       </ul>
     </div>
 
+  </div>
   </div>
 
   <%= yield %>

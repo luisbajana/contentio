@@ -1,5 +1,12 @@
 class HomeController < ApplicationController
 
-  def index; end
+  def index
+    @articulos = Articulo.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @articulos }
+    end
+  end
 
 end

@@ -1,5 +1,47 @@
-<h1>New articulo</h1>
 
-<%= render 'form' %>
+<br>
+<br>
+<br>
+<br>
+<h1>Nuevo articulo</h1>
+
+<%= form_for( @articulo, :url => { :action => "create" }, :html => {:class => "well span12"}) do |r| %>
+
+    <div class="control-group">
+        <div class="controls">
+          <%= r.label :titulo %>
+          <%= r.text_field :titulo %>
+        </div>
+      </div>
+      <div class="control-group">
+        <div class="controls">
+          <%= r.label :descripcion %>
+          <%= r.text_field :descripcion %>
+        </div>
+      </div>
+      <div class="control-group">
+        <div class="controls">
+          <%= r.label :contenido %>
+          <%= r.text_area :contenido %>
+        </div>
+      </div>
+      <div class="control-group">
+        <div class="controls">
+          <%= r.label :categoria %>
+          <%= r.text_area :categoria %>
+        </div>
+      </div>
+      <div class="control-group">
+        <div class="controls">
+          <%= r.label :tweet %>
+          <%= r.text_area :tweet %>
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+      Crear
+    </button>
+<% end %>
 
 <%= link_to 'Back', articulos_path %>
